@@ -1,0 +1,36 @@
+{
+  "name": "namshte-reactjs",
+  "version": "1.0.0",
+  "description": "This is Namshte React by Shahid Khan",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VampsDamon/Namshte-React-S2.git"
+  },
+  "keywords": [
+    "React",
+    "App",
+    "MERN",
+    "shahid",
+    "Sid"
+  ],
+  "author": "Shahid Khan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VampsDamon/Namshte-React-S2/issues"
+  },
+  "homepage": "https://github.com/VampsDamon/Namshte-React-S2#readme",
+  "devDependencies": {
+    "parcel": "^2.10.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0"
+  }
+}

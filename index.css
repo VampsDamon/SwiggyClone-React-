@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700&family=Nova+Square&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* overflow-x:hidden; */
+  font-family: "Dosis", sans-serif;
+}
+
+.center {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.header {
+  top: 0;
+  width: 100%;
+  position: fixed;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  /* height: 40px; */
+  padding: 10px;
+  align-items: center;
+  box-shadow: 0 5px 5px #f3f1f1;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.logoimg {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.nav-item > ul {
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+
+.links {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: all 5ms ease;
+}
+.links:hover {
+  border-bottom: 2px solid orange;
+}
+
+/* ********************Resturorent Cards**************** */
+.resroCard {
+  margin: 10px 0;
+  width: 200px;
+  background-color: rgb(247, 242, 242);
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+}
+.resroCard:hover {
+  box-shadow: 5px 5px 10px rgb(186, 176, 176);
+  cursor: pointer;
+}
+.img-box {
+  padding: 0.5rem;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 2rem;
+  border-radius: inherit;
+}
+.img-box img {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.card-detailes {
+  padding: 0.5rem;
+  overflow-wrap: break-word;
+  height: 180px;
+  overflow: hidden;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.body {
+  margin-top: 5rem;
+  height: 100%;
+}
+
+.rest-fetures {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+}
+
+.filterData {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(220, 110, 20);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2 ease-in-out;
+}
+.filterData:hover {
+  box-shadow: 5px 5px 10px rgb(239, 152, 81);
+}
+
+.search-input {
+  margin-right: 10px;
+  padding: 0.2em 0.8em;
+  border-radius: 10px;
+  outline-color: orange;
+}
+
+.shimmer-container {
+  display: flex;
+}
+.shimmer-box {
+  background-color: rgb(215, 210, 210);
+  width: 200px;
+  height: 400px;
+}
+
+.shine {
+  background: #f6f7f8;
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  display: inline-block;
+
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderShimmer;
+  -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.emptylist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.errorBOX {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: row;
+  height: 95vh;
+  overflow: hidden;
+}
+.errorBOX img {
+  height: 40%;
+  width: 600px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 10px rgb(100, 100, 239);
+}
+
+.footer {
+  width: 100%;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 0.7rem;
+  font-size: x-large;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.restromenu {
+  margin-top: 100px;
+  /* height: 100vh; */
+  border: 2px solid rgba(176, 175, 175, 0.611);
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgba(128, 128, 128, 0.161);
+}
+
+/* *************************Mneu Page ********************* */
+
+.restromenu {
+  padding: 0.4rem;
+  width: 800px;
+  max-width: 80%;
+}
+.rest-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed gray;
+  padding: 5px;
+  padding-bottom: 20px;
+}
+.rest-info h1 {
+  margin-bottom: 5px;
+}
+.rest-info h4,
+p {
+  color: gray;
+  font-weight: 300;
+}
+.ratting {
+  height: 90px;
+  width: 20%;
+  /* background-color: rgba(231, 227, 227, 0.248); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 15px;
+  flex-direction: column;
+  border: 1px solid rgba(128, 128, 128, 0.312);
+  box-shadow: 3px 3px 5px rgba(128, 128, 128, 0.074);
+  color: #5ba723;
+}
+.ratting img {
+  width: 1.3rem;
+  height: 30px;
+  object-fit: contain;
+}
+
+.priceTime {
+  display: flex;
+  font-size: 0.8em;
+  padding: 10px 5px;
+  align-items: center;
+  gap: 40px;
+  border-bottom: 1px dashed gray;
+  color: rgba(0, 0, 0, 0.928);
+}
+
+.restroLinks {
+  text-decoration: none;
+  color: black;
+}
+
+/* *********************************CSS change to Tailwind ********************************* */
+
+.about {
+  width: 900px;
+  max-width: 80%;
+  margin: auto;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.userCard {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid gray;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 15px gray;
+}
+.userCard img {
+  width: 150px;
+  border-radius: 50%;
+}
+.appOutlet{
+  min-height: 100vh;
+}
+.AboutData{
+  border-left: 2px dashed gray;
+  padding-left: 20px;
+}
