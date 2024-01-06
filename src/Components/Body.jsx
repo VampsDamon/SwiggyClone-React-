@@ -1,10 +1,12 @@
-import ResturantCard from "./ResturantCard";
+import ResturantCard, { withPromotedLabel } from "./ResturantCard";
 import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
 import { API_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import { MOB_API_URL } from "../utils/constant";
+// import  from "./ResturantCard";
 const searchData = (searchText, API_restro) => {
-  console.log(searchText);
   return searchText !== ""
     ? API_restro.filter((rest) =>
         rest.info.name?.toLowerCase()?.includes(searchText?.toLowerCase())
@@ -16,13 +18,18 @@ const Body = () => {
   const [restList, setRestList] = useState([]);
   const [searchText, SetsearchText] = useState("");
   const [API_restro, setAPI_restro] = useState([]);
+  const onlineStatus = useOnlineStatus();
+  const ResturantPromotedCard = withPromotedLabel(ResturantCard);
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(API_URL);
+    const data =
+      window.innerWidth <= 768
+        ? await fetch(MOB_API_URL)
+        : await fetch(API_URL);
     const json = await data.json();
     setRestList(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -31,6 +38,13 @@ const Body = () => {
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  if (onlineStatus == false)
+    return (
+      <h1 className="flex justify-center items-center font-extrabold text-4xl mt-14 h-dvh">
+        You are offline Check your Internet Connectivity
+      </h1>
+    );
 
   if (API_restro.length === 0) {
     return <Shimmer />;
@@ -107,7 +121,11 @@ const Body = () => {
               key={resturant.info.id}
               to={"/resturants/" + resturant.info.id}
             >
-              <ResturantCard restData={resturant.info} />
+              {resturant.info.veg ? (
+                <ResturantPromotedCard restData={resturant.info} />
+              ) : (
+                <ResturantCard restData={resturant.info} />
+              )}
             </Link>
           ))}
         </div>

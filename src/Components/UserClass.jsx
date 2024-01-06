@@ -27,10 +27,10 @@ class UserClass extends React.Component {
           <img src={avatar_url} alt="" />
         </div>
         <div className="AboutData">
-          <h3>Name :{name}</h3>
+          <h3 className="font-extrabold ">Name :{name}</h3>
           <p>{bio}</p>
-          <h4>Location : Jaipur</h4>
-          <h4>Conatact : {login}</h4>
+          <h4 className="font-medium">Location : Jaipur</h4>
+          <h4 className="font-medium">Conatact : {login}</h4>
         </div>
       </div>
     );

@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700&family=Nova+Square&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700&family=Nova+Square&display=swap"); */
 
 * {
   margin: 0;
@@ -15,6 +19,7 @@
 }
 
 .header {
+  z-index: 1000;
   top: 0;
   width: 100%;
   position: fixed;
@@ -109,12 +114,12 @@
 }
 
 .filterData {
-  padding: 5px 10px;
+  padding: 2px 10px;
   border: none;
   border-radius: 15px;
   background-color: rgb(220, 110, 20);
   color: white;
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2 ease-in-out;
 }
@@ -124,9 +129,10 @@
 
 .search-input {
   margin-right: 10px;
-  padding: 0.2em 0.8em;
+  padding: 0.1em 0.8em;
   border-radius: 10px;
   outline-color: orange;
+  border: 2px solid black;
 }
 
 .shimmer-container {
@@ -294,10 +300,10 @@ p {
   width: 150px;
   border-radius: 50%;
 }
-.appOutlet{
+.appOutlet {
   min-height: 100vh;
 }
-.AboutData{
+.AboutData {
   border-left: 2px dashed gray;
   padding-left: 20px;
 }
