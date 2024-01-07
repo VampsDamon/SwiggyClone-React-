@@ -5,6 +5,8 @@ import { API_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { MOB_API_URL } from "../utils/constant";
+// import UserContext from "../utils/UserContext";
+import { useContext } from "react";
 // import  from "./ResturantCard";
 const searchData = (searchText, API_restro) => {
   return searchText !== ""
@@ -14,6 +16,7 @@ const searchData = (searchText, API_restro) => {
     : API_restro;
 };
 
+// const {loggedInUser,setUserName}=useContext(UserContext);
 const Body = () => {
   const [restList, setRestList] = useState([]);
   const [searchText, SetsearchText] = useState("");
@@ -112,6 +115,7 @@ const Body = () => {
         >
           High to Low
         </button>
+        
       </div>
       {
         <div className="cards">

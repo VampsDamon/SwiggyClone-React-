@@ -9,19 +9,12 @@ import { useState } from "react";
 const RestroMenu = () => {
   const { resid } = useParams();
   const restroInfo = useRestroMenu(resid);
-  const [showCards,setShowCards]=useState(0);
+  const [showCards, setShowCards] = useState(0);
 
   if (restroInfo == null) return <Shimmer />;
 
   const { name, avgRating, cuisines, locality, costForTwoMessage } =
     restroInfo.cards[0]?.card?.card?.info;
-
-  const itemCards =
-    restroInfo.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-      ?.card?.itemCards ??
-    restroInfo.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-      ?.card?.itemCards ??
-    [];
 
   const categoryList =
     restroInfo.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
@@ -54,10 +47,9 @@ const RestroMenu = () => {
             <ResturantsItems
               key={category.card.card.title}
               data={category}
-              showRes={index===showCards?true:false}
-              setShowCard={()=>
-                
-                setShowCards(index)
+              showRes={index === showCards ? true : false}
+              setShowCard={() =>
+                index === showCards ? setShowCards(null) : setShowCards(index)
               }
             />
           ))}

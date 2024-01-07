@@ -2,9 +2,7 @@ import { useState } from "react";
 import ResturnatCategory from "./ResturantCategory";
 
 const ResturantsItems = ({ data, showRes,setShowCard }) => {
-  const [showRes2, setShowRes2] = useState(false);
   const clickHandeler = () => {
-    setShowRes2(!showRes);
     setShowCard();
   };
   return (

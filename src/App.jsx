@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import * as ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -8,16 +8,30 @@ import About from "./Components/About";
 import Error from "./Components/Error";
 import RestroMenu from "./Components/RestroMenu";
 import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
+import UserContext from "./utils/UserContext";
 
-const AppLayout = () => (
-  <div className="app">
-    <Header />
-    <div className="appOutlet">
-      <Outlet />
+const AppLayout = () =>{ 
+   const [userName,setUserName]=useState();
+  //Auttthentication done
+  useEffect(()=>{
+    //API Calls and return userInfo in as data
+     const data={
+      name:"Shahid Khan"
+     }
+     //Set the User Name
+     setUserName(data.name);
+  },[])
+  return (
+    <div className="app">
+      <UserContext.Provider value={{loggedInUser:userName,setUserName}}>
+        <Header />
+        <div className="appOutlet">
+          <Outlet />
+        </div>
+        <Footer />
+      </UserContext.Provider>
     </div>
-    <Footer />
-  </div>
-);
+  );};
 
 const router = createBrowserRouter([
   {
